@@ -1,0 +1,72 @@
+<div class="background">
+
+<h2></h2>
+
+<form id="formAdd">
+  <h2>Add Location</h2>
+
+    <div class="container" class="cf">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+          <input
+            type="text"
+            name="locationname"
+            placeholder="Name"
+            required
+            [(ngModel)]="loc.Name"
+          />
+          <div class="valid" *ngIf="name"><p>You must type the location name.</p></div>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+          <input
+            type="text"
+            name="locationaddress"
+            placeholder="Address"
+            [(ngModel)]="loc.Address"
+            required
+          />
+          <div class="valid" *ngIf="address"><p>You must type the location address.</p></div>
+        </div>
+
+        <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+          Select City:
+          <select [(ngModel)]="loc.id_City" name="city" required>
+            <option *ngFor="let cit of cities" [value]="cit.id_City"
+              >{{cit.city_name}}</option
+            >
+          </select>
+          <div class="valid" *ngIf="town"><p>You must choose the location city.</p></div>
+        </div>
+        <div class="col-lg-6 col-md-12 col-sm-12 col-12">
+          <input
+          type="number"
+            min="1"
+            name="latitude"
+            placeholder="Latitude"
+            [(ngModel)]="loc.Latitude"
+            required
+          />
+         
+        </div>
+        <div class="col-lg-6 col-md-12 col-sm-12 col-12">
+          <input
+            type="number"
+            min="1"
+            name="longitude"
+            placeholder="Longitude"
+            [(ngModel)]="loc.Longitude"
+            required
+          />
+         
+        </div>
+        <div class="col-lg-6 col-md-12 col-sm-12 col-12">
+          <input type="submit" id="addlocation" value="Add location" (click)="onSubmit()">
+        </div>
+        <div class="col-lg-6 col-md-12 col-sm-12 col-12">
+          <input type="submit" id="cancel" value="Cancel" routerLink='/locationlist'>
+      </div>
+      </div>
+    </div>
+  </form>
+
+</div>

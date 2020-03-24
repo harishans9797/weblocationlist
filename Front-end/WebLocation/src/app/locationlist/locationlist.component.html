@@ -1,0 +1,37 @@
+
+<table class="table">
+    <thead class="alert alert-info">
+        <th>Name </th>
+        <th>Address</th>
+        <th>Latitude</th>
+        <th>Longitude</th>
+        <th>City</th>
+        <th><button type=button class="btn btn-primary"  routerLink='/addlocation'> + Add new location</button></th>
+    </thead>
+        <tr *ngFor="let loc of locations | paginate: { itemsPerPage: 10, currentPage: p }, let i=index;">
+            <ng-container *ngFor="let cit of cities">
+            <ng-container *ngIf="cit.id_City == loc.id_City">
+                <td class="locname" (click)="openDetails(loc.id_Location)"> {{loc.name}}</td>
+                <td> {{loc.address}}</td>
+                <td> {{loc.latitude}}</td>
+                <td> {{loc.longitude}}</td>
+                <td >{{cit.city_name}}</td>
+                <td> <button type=button class="btn btn-danger"  (click)="modalActive()"><fa-icon [icon]="faTrashAlt" class ="trash" ></fa-icon></button></td>
+                <div class="popup" *ngIf="mod">
+        
+                    <div class="modal-content">
+                                <p>Are you sure?</p>
+                                <button class="btn btn-primary" (click)="clickMethod(loc.id_Location)">Ok</button>
+                                <button class="btn btn-dark" (click)="modalExit()">Close</button>
+                            </div>
+                   </div>
+            </ng-container>
+        </ng-container>
+        </tr>
+
+        <div class="row fa-pull-right"> 
+            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+          </div>
+  
+</table>
+

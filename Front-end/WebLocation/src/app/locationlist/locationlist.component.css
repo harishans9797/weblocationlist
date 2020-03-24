@@ -1,0 +1,45 @@
+.locname{
+    text-decoration: underline;
+}
+.locname:hover{
+    color: blue;
+}
+/* The Modal (background) */
+.popup {
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 200px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 40%;
+  }
+
+  .btnref {
+    background-color: DodgerBlue; /* Blue background */
+    border: none; /* Remove borders */
+    color: white; /* White text */
+    padding: 12px 16px; /* Some padding */
+    font-size: 16px; /* Set a font size */
+    cursor: pointer; /* Mouse pointer on hover */
+  }
+  
+  /* Darker background on mouse-over */
+  .btnref:hover {
+    background-color: RoyalBlue;
+  }
+
+
+  

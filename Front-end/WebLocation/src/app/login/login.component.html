@@ -1,0 +1,47 @@
+<body  class="login-body">
+
+  <div id="forma" class="cont">
+
+
+<form name="form" #userForm="ngForm" (ngSubmit)="f.form.valid && onLogin()" #f="ngForm" novalidate>
+
+<h1>Login</h1>
+
+<fa-icon [icon]="faEnvelope" class ="envelope" ></fa-icon>
+  <input type="text" 
+                        id="user"
+                        class="form-control"
+                        required #email="ngModel"
+                        placeholder="Email" 
+                        name="Student_email" 
+                        [(ngModel)]="loginModel.email"
+                 [ngClass]="{ 'is-invalid': f.submitted && email.invalid }" required email>
+                <div *ngIf="f.submitted && email.invalid" class="invalid-feedback">
+                    <div class="error-message"id="error1" *ngIf="email.errors.required">Email is required</div>  
+                    <div class="error-message" id="error1" *ngIf="email.errors.email">Email must be a valid email address</div>
+    
+                </div>
+   
+                <fa-icon [icon]="faLock" class ="lock" ></fa-icon>
+    <input type="password" 
+    id="pass"
+    class="form-control"
+    required #password="ngModel"
+    placeholder="Password"
+    name="password" 
+    [(ngModel)]="loginModel.password"
+    [ngClass]="{ 'is-invalid': f.submitted && password.invalid }">
+    <div *ngIf="f.submitted && password.invalid" class="invalid-feedback">
+        <div class="error-message" id="error2" *ngIf="password.errors.required">Password is required</div>
+    </div>
+
+    <button [disabled]="loading" class="btn btn-primary" id="login">
+      <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+           Login
+  </button>
+
+  </form>
+
+  </div>
+</body>
+  
