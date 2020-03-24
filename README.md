@@ -52,3 +52,5 @@ Madrid
 Istanbul
 Moscow
 Stockholm
+
+Technologies used: Angular, ASP.NET CORE WebAPI and MYSQl
