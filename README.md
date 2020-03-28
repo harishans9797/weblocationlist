@@ -32,13 +32,9 @@ Longitude
 Latitude 
 Save button (leads back to List of locations on success, remains on the screen on failure)
 Cancel button (leads back to List of locations screen). 
+Login (authentication and authorization with JWT). 
+Responsivnes.
 
-
-Additional notes:
-Login (authentication and authorization) are not necessary. 
-Choice of tech stack is up to developer. 
-Source code should be sent along with scripts for database setup and screenshots of the web app.
-Responsiveness is not necessary for the web app.
 List of cities for City table is below:
 Berlin
 Amsterdam
